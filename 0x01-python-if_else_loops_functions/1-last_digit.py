@@ -11,4 +11,3 @@ elif number == 0:
     print(f"{message} {number} is {lastDigit} and is 0")
 elif number < 6:
     print(f"{message} {number} is {lastDigit} and is less than 6 and not 0")
-
