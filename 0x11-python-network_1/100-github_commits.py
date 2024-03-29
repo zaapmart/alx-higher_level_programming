@@ -16,7 +16,7 @@ if __name__ == "__main__":
 
     url = 'https://api.github.com/user'
     response = requests.get(url, auth=(username, password))
-    
+
     if response.status_code == 200:
         user_info = response.json()
         print("Your GitHub id is:", user_info['id'])
