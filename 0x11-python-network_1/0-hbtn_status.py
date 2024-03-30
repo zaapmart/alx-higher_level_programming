@@ -1,15 +1,15 @@
 #!/usr/bin/python3
-"""fetches https://intranet.hbtn.io/status"""
+"""A Python script that fetches https://alx-intranet.hbtn.io/status"""
+
 import urllib.request
 
-
 if __name__ == "__main__":
-    """fetches https://intranet.hbtn.io/status"""
-    with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
-        html = response.read()
-        html_str = html.decode('utf-8')
+    url = 'https://alx-intranet.hbtn.io/status'
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
+    req = urllib.request.Request(url, headers=headers)
+    with urllib.request.urlopen(req) as response:
+        content = response.read()
+        print("Body response:")
+        print("\t- type: {}".format(type(content)))
+        print("\t- content: {}".format(content.decode('utf-8'))
 
-    print("Body response:")
-    print("\t- type: {}".format(type(html)))
-    print("\t- content: {}".format(html))
-    print("\t- utf8 content: {}".format(html_str))
